@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<context id="order_book">
+		<!-- 指定生成的java文件的编码,没有直接生成到项目时中文可能会乱码 -->
+		<property name="javaFileEncoding" value="UTF-8" />
+		<!-- 这里的type里写的是你的实现类的类全路径 -->
+		<commentGenerator type="org.mybatis.generator.MyCommentGenerator" />
+		<jdbcConnection
+			connectionURL="jdbc:mysql://localhost:3306/db_orderbook?useUnicode=true&amp;characterEncoding=utf8"
+			driverClass="com.mysql.jdbc.Driver" password="liangyun" userId="root" />
+		<javaModelGenerator targetPackage="com.blackfox.orderbook.entity"
+			targetProject="src/" />
+		<sqlMapGenerator targetPackage="com.blackfox.orderbook.dao"
+			targetProject="src/" />
+		<javaClientGenerator targetPackage="com.blackfox.orderbook.dao"
+			targetProject="src/" type="XMLMAPPER" />
+		<table tableName="tb_product_type" domainObjectName="ProductType" />
+		<table tableName="tb_order_detail" domainObjectName="OrderDetail" />
+		<table tableName="tb_customer" domainObjectName="Customer" />
+		<table tableName="tb_manufactor" domainObjectName="Manufactor" />
+		<table tableName="tb_order" domainObjectName="Order" />
+		<table tableName="tb_product" domainObjectName="Product" />
+		<!-- -->
+	</context>
+</generatorConfiguration>
